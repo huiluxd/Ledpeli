@@ -1,0 +1,257 @@
+int const Ain = A0; 
+int Soitin = 13; 
+int Nappi = 2;   
+int L11 =  11;  
+int L10 =  10;  
+int L9 =  9;   
+int L8 =  8;  
+int L7 =  7;  
+int L6 =  6;   
+int L5 =  5;  
+int L4 =  4;  
+int L3 =  3;   
+int Arvo  =  0; 
+int Nopeus  =  0; 
+int napintila = digitalRead(Nappi); 
+int x  = 0; 
+int y  = 30; 
+
+int melody[] = {
+  262, 196,196, 220, 196,0, 247, 262};
+// Nuotin pituus: 4 = Neljännesosa, 8 = kahdeksannesosa, jne.:
+int noteDurations[] = {
+4, 8, 8, 4,4,4,4,4 };
+void setup() { 
+  pinMode(Soitin, OUTPUT); 
+  pinMode(Nappi, INPUT); 
+  pinMode(L11, OUTPUT); 
+  pinMode(L10, OUTPUT); 
+  pinMode(L9, OUTPUT); 
+  pinMode(L8, OUTPUT); 
+  pinMode(L7, OUTPUT); 
+  pinMode(L6, OUTPUT); 
+  pinMode(L5, OUTPUT); 
+  pinMode(L4, OUTPUT); 
+  pinMode(L3, OUTPUT); 
+} 
+void loop() { 
+  napintila = digitalRead(Nappi); 
+  Arvo = analogRead(Ain); 
+  Nopeus = map (Arvo, 0, 1024, 0 ,255); 
+  if(napintila==LOW){ 
+    napintila = digitalRead(Nappi); 
+    digitalWrite(L3,HIGH); 
+    x=(0); 
+    delay(Arvo+y); 
+    digitalWrite(L3,LOW); 
+    napintila = digitalRead(Nappi); 
+  } 
+  if(napintila==LOW){ 
+    digitalWrite(L4,HIGH); 
+    x=(0); 
+    delay(Arvo+y); 
+    digitalWrite(L4,LOW); 
+    napintila = digitalRead(Nappi); 
+  } 
+  if(napintila==LOW){ 
+    digitalWrite(L5,HIGH); 
+    x=(0); 
+    delay(Arvo+y); 
+    digitalWrite(L5,LOW); 
+    napintila = digitalRead(Nappi); 
+  } 
+  if(napintila==LOW){ 
+    digitalWrite(L6,HIGH); 
+    napintila = digitalRead(Nappi); 
+    x=(0); 
+    delay(Arvo+y); 
+    digitalWrite(L6,LOW); 
+    napintila = digitalRead(Nappi); 
+  } 
+  if(napintila==LOW){ 
+    digitalWrite(L7,HIGH); 
+    x=(1); 
+    delay(Arvo+y); 
+    digitalWrite(L7,LOW); 
+    napintila = digitalRead(Nappi); 
+  } 
+  if(napintila==LOW){ 
+    digitalWrite(L8,HIGH); 
+    x=(0); 
+    delay(Arvo+y); 
+    digitalWrite(L8,LOW); 
+    napintila = digitalRead(Nappi); 
+  } 
+  if(napintila==LOW){ 
+    digitalWrite(L9,HIGH); 
+    x=(0); 
+    delay(Arvo+y); 
+    digitalWrite(L9,LOW); 
+    napintila = digitalRead(Nappi); 
+  } 
+  if(napintila==LOW){ 
+    digitalWrite(L10,HIGH); 
+    x=(0); 
+    delay(Arvo+y); 
+    digitalWrite(L10,LOW); 
+    napintila = digitalRead(Nappi); 
+  } 
+  if(napintila==LOW){ 
+    digitalWrite(L11,HIGH); 
+    x=(0); 
+    delay(Arvo+y); 
+    digitalWrite(11,LOW); 
+    napintila = digitalRead(Nappi); 
+  } 
+Arvo = analogRead(Ain); 
+  if(napintila==LOW){ 
+    digitalWrite(L10,HIGH); 
+    x=(0); 
+    delay(Arvo+y); 
+    digitalWrite(L10,LOW); 
+    napintila = digitalRead(Nappi); 
+  } 
+  if(napintila==LOW){ 
+    digitalWrite(L9,HIGH); 
+    x=(0); 
+    delay(Arvo+y); 
+    digitalWrite(L9,LOW); 
+    napintila = digitalRead(Nappi); 
+  } 
+  if(napintila==LOW){ 
+    digitalWrite(L8,HIGH); 
+    x=(0);
+    delay(Arvo+y); 
+    digitalWrite(L8,LOW); 
+    napintila = digitalRead(Nappi); 
+  } 
+  if(napintila==LOW){ 
+    digitalWrite(L7,HIGH); 
+    x=(1); 
+    delay(Arvo+y); 
+    digitalWrite(L7,LOW); 
+    napintila = digitalRead(Nappi); 
+  } 
+  if(napintila==LOW){ 
+    digitalWrite(L6,HIGH); 
+    x=(0); 
+    napintila = digitalRead(Nappi); 
+    delay(Arvo+y); 
+    digitalWrite(L6,LOW); 
+    napintila = digitalRead(Nappi); 
+  } 
+  if(napintila==LOW){ 
+    digitalWrite(L5,HIGH); 
+    x=(0); 
+    delay(Arvo+y); 
+    digitalWrite(L5,LOW); 
+    napintila = digitalRead(Nappi); 
+  } 
+  if(napintila==LOW){ 
+    digitalWrite(L4,HIGH); 
+    x=(0); 
+    delay(Arvo+y); 
+    digitalWrite(L4,LOW); 
+    napintila = digitalRead(Nappi); 
+  } 
+  if((napintila==HIGH) && (x==1)){ 
+    
+  {
+ digitalWrite(L7,HIGH); 
+      delay(40); 
+      digitalWrite(L7,LOW); 
+      delay(40); 
+      digitalWrite(L7,HIGH); 
+      delay(40); 
+      digitalWrite(L7,LOW); 
+      digitalWrite(L7,HIGH); 
+      delay(40); 
+      digitalWrite(L7,LOW); 
+      delay(40); 
+      digitalWrite(L7,HIGH); 
+      delay(40); 
+      digitalWrite(L7,LOW); 
+      digitalWrite(L7,HIGH); 
+      delay(40); 
+      digitalWrite(L7,LOW); 
+      delay(40); 
+      digitalWrite(L7,HIGH); 
+      delay(40); 
+      digitalWrite(L7,LOW);
+     for (int thisNote = 0; thisNote < 8; thisNote++) {
+    int noteDuration = 1000/noteDurations[thisNote];
+    tone(13, melody[thisNote],noteDuration);
+    int pauseBetweenNotes = noteDuration * 1.30;
+    delay(pauseBetweenNotes);
+    noTone(13);
+    }
+  }
+      digitalWrite(L7,HIGH); 
+      delay(40); 
+      digitalWrite(L7,LOW); 
+      delay(40); 
+      digitalWrite(L7,HIGH); 
+      delay(40); 
+      digitalWrite(L7,LOW); 
+      digitalWrite(L7,HIGH); 
+      delay(40); 
+      digitalWrite(L7,LOW); 
+      delay(40); 
+      digitalWrite(L7,HIGH); 
+      delay(40); 
+      digitalWrite(L7,LOW); 
+      digitalWrite(L7,HIGH); 
+      delay(40); 
+      digitalWrite(L7,LOW); 
+      delay(40); 
+      digitalWrite(L7,HIGH); 
+      delay(40); 
+      digitalWrite(L7,LOW); 
+    } 
+  if((napintila==HIGH) && (x==0)){
+    digitalWrite(L3,HIGH); 
+    digitalWrite(L11,HIGH); 
+    delay(40); 
+    digitalWrite(L3,LOW); 
+    digitalWrite(L11,LOW); 
+    delay(40); 
+    digitalWrite(L4,HIGH); 
+    digitalWrite(L10,HIGH); 
+    delay(40); 
+    digitalWrite(L4,LOW); 
+    digitalWrite(L10,LOW); 
+    delay(40); 
+    digitalWrite(L5,HIGH); 
+    digitalWrite(L9,HIGH); 
+    delay(40); 
+    digitalWrite(L5,LOW); 
+    digitalWrite(L9,LOW); 
+    digitalWrite(L3,HIGH); 
+    digitalWrite(L11,HIGH); 
+    delay(40); 
+    digitalWrite(L3,LOW); 
+    digitalWrite(L11,LOW); 
+    delay(40); 
+    digitalWrite(L4,HIGH); 
+    digitalWrite(L10,HIGH); 
+    delay(40); 
+    digitalWrite(L4,LOW); 
+    digitalWrite(L10,LOW); 
+    delay(40); 
+    digitalWrite(L5,HIGH); 
+    digitalWrite(L9,HIGH); 
+    delay(40); 
+    digitalWrite(L5,LOW); 
+    digitalWrite(L9,LOW); 
+    tone(Soitin, 500);
+      delay(200);
+      tone(Soitin, 250);
+      delay(200);
+      tone(Soitin, 69);
+      delay(200);
+      tone(Soitin, 420);
+      noTone(Soitin);
+      delay(1000);
+  } 
+
+}
