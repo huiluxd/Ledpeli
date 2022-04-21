@@ -16,7 +16,8 @@ int napintila = digitalRead(Nappi);
 int x  = 0; 
 int y  = 30; 
 
-#Esimerkki koodi arduinon kirjastosta soittimeen.
+// Koodiesimerkki löytyy arduinon omasta kirjastosta.
+// Melodia löytyi tältä sivulta: https://forum.arduino.cc/t/piezo-buzzer-win-and-fail-sound/133792
 int melody[] = {
   262, 196,196, 220, 196,0, 247, 262};
 // Nuotin pituus: 4 = Neljännesosa, 8 = kahdeksannesosa, jne.:
