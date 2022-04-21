@@ -16,6 +16,7 @@ int napintila = digitalRead(Nappi);
 int x  = 0; 
 int y  = 30; 
 
+#Esimerkki koodi arduinon kirjastosta soittimeen.
 int melody[] = {
   262, 196,196, 220, 196,0, 247, 262};
 // Nuotin pituus: 4 = Neljännesosa, 8 = kahdeksannesosa, jne.:
